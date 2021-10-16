@@ -3,6 +3,8 @@ const socketIO = require('socket.io');
 const app = express();
 const http = require('http');
 const homeRoute = require('./routes/home');
+const HOST_BACKEND = require('./hostBackend.js');
+
 app.use(homeRoute);
 const server = http.createServer(app);
 const io = socketIO(server, {
@@ -24,5 +26,5 @@ io.on('connection', (socket) => {
 })
 
 const port = process.env.PORT || 4001;
-server.listen(port, '127.0.0.1', () => console.log(`Listening on port ${port}`));
+server.listen(port, HOST_BACKEND, () => console.log(`Listening on port ${port}`));
 

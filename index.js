@@ -16,9 +16,10 @@ const io = socketIO(server, {
     }});
 
 io.on('connection', (socket) => {
+    
     socket.on('message', (payload) => {
       io.emit('message', payload);
-    });
+    }); 
     socket.on('check', (payload) => {
       io.emit('check', payload);
     });

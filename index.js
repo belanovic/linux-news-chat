@@ -3,7 +3,7 @@ const socketIO = require('socket.io');
 const app = express();
 const http = require('http');
 const homeRoute = require('./routes/home');
-const HOST_BACKEND = require('./hostBackend.js');
+// const HOST_BACKEND = require('./hostBackend.js');
 const mongoose = require('mongoose');
 const Message = require('./models/Message');
 
@@ -81,5 +81,6 @@ io.on('connection', async (socket) => {
 // app.get('/deleteMessages', (req, res) => {console.log('deleteMessages')});
 
 const port = process.env.PORT || 4001;
+const HOST_BACKEND = process.env.HOST_BACKEND || 'localhost';
 server.listen(port, HOST_BACKEND, () => console.log(`Listening on port ${port}`));
 

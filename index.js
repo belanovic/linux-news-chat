@@ -15,7 +15,7 @@ const mongoAddress2 = `mongomongodb+srv://goranbelanovic:1234@cluster0.xneom.mon
 // mongoose.set('useFindAndModify', false);
 
 mongoose.connect(mongoAddress2, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to the chat database'))
+  .then(() => console.log('Connected to the chat databaseeee'))
   .catch(err => console.log(err))
 
 ///////////////////////////////

@@ -7,7 +7,7 @@ const homeRoute = require('./routes/home');
 const mongoose = require('mongoose');
 const Message = require('./models/Message');
 
-/////////////// mongodb initialise
+///////////////// mongodb initialise   
 
 const mongoAddress1 = `mongodb://localhost/news`;
 const mongoAddress2 = `mongomongodb+srv://goranbelanovic:1234@cluster0.xneom.mongodb.net/chat?retryWrites=true&w=majority`;
@@ -42,7 +42,6 @@ io.on('connection', async (socket) => {
 
   const timeOfLastMessage = messagesDB[messagesDB.length - 1].milliseconds;
   const deletedMessages = await Message.deleteMany({milliseconds: {$lt: timeOfLastMessage - 60000} })
-
 
   socket.emit('messagesDB', messagesDB);
 

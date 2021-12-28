@@ -7,7 +7,7 @@ const homeRoute = require('./routes/home');
 const mongoose = require('mongoose');
 const Message = require('./models/Message');
 
-///////////////// mongodb initialise   
+///////////////// mongodb initialisee
 
 const mongoAddress1 = `mongodb://localhost/news`;
 const mongoAddress2 = `mongomongodb+srv://goranbelanovic:1234@cluster0.xneom.mongodb.net/chat?retryWrites=true&w=majority`;

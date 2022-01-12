@@ -5,14 +5,14 @@ const http = require('http');
 const homeRoute = require('./routes/home');
 // const HOST_BACKEND = require('./hostBackend.js');
 const mongoose = require('mongoose');
-const Message = require('./models/Message');
+const Message = require('./models/Message');      
 
 ///////////////// mongodb initialisee
 
 const mongoAddress1 = `mongodb://localhost/news`;
 const mongoAddress2 = `mongomongodb+srv://goranbelanovic:1234@cluster0.xneom.mongodb.net/chat?retryWrites=true&w=majority`;
 
-// mongoose.set('useFindAndModify', false);
+// mongoose.set('useFindAndModify', false); 
 
 mongoose.connect(mongoAddress2, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to the chat databaseeee'))

@@ -5,7 +5,7 @@ const http = require('http');
 const homeRoute = require('./routes/home');
 // const HOST_BACKEND = require('./hostBackend.js');
 const mongoose = require('mongoose');
-const Message = require('./models/Message');      
+const Message = require('./models/Message');        
 
 ///////////////// mongodb initialisee
 
@@ -19,6 +19,8 @@ mongoose.connect(mongoAddress2, { useNewUrlParser: true, useUnifiedTopology: tru
   .catch(err => console.log(err))
 
 ///////////////////////////////
+
+
 
 app.use(homeRoute);
 const server = http.createServer(app);

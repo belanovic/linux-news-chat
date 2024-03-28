@@ -18,7 +18,7 @@ mongoose.connect(mongoAddress2, { useNewUrlParser: true, useUnifiedTopology: tru
   .then(() => console.log('Connected to the chat databaseeee'))
   .catch(err => console.log(err))
 
-///////////////////////////////////
+///////////////////////////////////////////
 
 
 
@@ -43,7 +43,7 @@ io.on('connection', async (socket) => {
   const messagesDB = await Message.find();
 
   const timeOfLastMessage = messagesDB[messagesDB.length - 1].milliseconds;
-  const deletedMessages = await Message.deleteMany({milliseconds: {$lt: timeOfLastMessage - 60000} })
+  const deletedMessages = await Message.deleteMany({milliseconds: {$lt: timeOfLastMessage - 660000} })
 
   socket.emit('messagesDB', messagesDB);
 

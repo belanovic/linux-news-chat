@@ -74,13 +74,16 @@ io.on('connection', async (socket) => {
 
   socket.on('check', async (payload) => {
     const checkedMessage = await Message.findByIdAndUpdate(payload._id, {checked: payload.checked}, {new: true})
-    console.log(checkedMessage);
     io.emit('check', payload);
   });
 
 })
 
-// app.get('/deleteMessages', (req, res) => {console.log('deleteMessages')});
+app.get('/n', (req, res) => {
+  res.send('chat server radi')
+  res.end();
+
+});
 
 
 const hostIP = config.get('hostIP');
